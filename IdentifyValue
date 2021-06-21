@@ -1,0 +1,29 @@
+Sub ReplaceValue()
+'Dim sht As Worksheet
+'Dim fndList As Variant
+'Dim rplcList As Variant
+'Dim x As Long
+
+'fndList = Array("A", "B", "C")
+'rplcList = Array("1111", "2222", "3333")
+
+Dim SrchRng As Range, cel As Range
+Set SrchRng = Range("A1:A10")
+
+'Loop through each item in Array lists
+'For x = LBound(fndList) To UBound(fndList)
+'THIS WORKS SO FAR
+  For Each cel In SrchRng
+    If cel.Value = "A" Then
+    cel.Offset(0, 1).Value = 111
+    End If
+    If cel.Value = "B" Then
+    cel.Offset(0, 1).Value = 222
+    End If
+    'If cel.Value <> "" Then
+     '   cel.Offset(0, 1).Value = cel.Value
+    'End If
+  Next cel
+
+'Next x
+End Sub
