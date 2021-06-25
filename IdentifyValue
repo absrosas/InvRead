@@ -27,3 +27,32 @@ Set SrchRng = Range("A1:A10")
 
 'Next x
 End Sub
+
+
+Sub Workbook_Open()
+Dim ID As String
+Dim cl As Range
+
+With ActiveSheet
+    For Each cl In Intersect(.Range("A:A"), .UsedRange)
+        If cl.Value = "A00286" And cl.Offset(, 13).Value = "TAXABLE" Then
+             cl.Offset(, 13).Value = "RESALE"
+        End If
+    Next cl
+
+    For Each cl In Intersect(.Range("A:A"), .UsedRange)
+        If cl.Value = "992643" And cl.Offset(, 13).Value = "TAXABLE" Then
+             cl.Offset(, 13).Value = "RESALE"
+        End If
+    Next cl
+
+    For Each cl In Intersect(.Range("A:A"), .UsedRange)
+        If cl.Value = "992647" And cl.Offset(, 13).Value = "TAXABLE" Then
+             cl.Offset(, 13).Value = "RESALE"
+        End If
+    Next cl
+End With
+
+
+
+End Sub
